@@ -11,14 +11,6 @@ window.SITE = {
   businessNo: "",          // 사업자등록번호  예) "000-00-00000"
   representative: "",      // 대표자
 
-  // 회원 로그인 (치료 사례 페이지). 실제 로그인은 외부 서비스(예: Supabase, Firebase)가 필요합니다.
-  // provider: "none" = 아직 연결 안 됨 → 사례 페이지는 잠금 상태로 표시됩니다.
-  auth: {
-    provider: "none",
-    loginUrl: "",          // 로그인 페이지 주소 (연결 후 입력)
-    signupUrl: ""          // 회원가입 페이지 주소 (연결 후 입력)
-  },
-
   // 외부 링크 (https:// 로 시작하는 전체 주소)
   links: {
     naverBooking: "",      // 네이버 예약

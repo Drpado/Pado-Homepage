@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>치료 사례 (회원 전용) | 파도한의원</title>
-  <meta name="description" content="파도한의원 치료 사례 — 로그인한 회원에게만 공개됩니다.">
+  <title>치료 사례 | 파도한의원</title>
+  <meta name="description" content="파도한의원 치료 사례 안내.">
   <meta name="robots" content="noindex">
   <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
@@ -17,60 +17,44 @@
     <div class="wrap">
       <p class="crumb">홈 &gt; 치료 사례</p>
       <h1>치료 사례</h1>
-      <p>로그인한 회원에게만 공개되는 페이지입니다.</p>
+      <p>실제 진료 사례를 소개합니다. 결과는 개인에 따라 다를 수 있습니다.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top:24px" data-members-gate>
+  <section class="section" style="padding-top:24px">
     <div class="wrap">
+      <p class="notice" style="margin-bottom:22px">사례의 사진과 경과는 환자분의 동의를 받아 게시하며, 개인에 따라 결과가 다를 수 있습니다. 시술 후 붓기·멍 등 이상 반응이 나타날 수 있습니다. <span class="todo">[고지 문구 최종 확인 필요]</span></p>
 
-      <!-- 잠금 상태 (로그인 전) -->
-      <div class="lock" data-locked>
-        <span class="lock__badge">회원 전용</span>
-        <h2>로그인 후 보실 수 있습니다</h2>
-        <p>치료 사례는 로그인한 회원에게만 공개됩니다. 회원가입 후 확인해 주세요.</p>
-        <div class="btns">
-          <a class="pill pill--lg pill--blue" data-auth-link="loginUrl" href="#">로그인</a>
-          <a class="pill pill--lg pill--line" data-auth-link="signupUrl" href="#">회원가입</a>
-        </div>
-        <p class="draft" style="margin-top:22px">로그인 서비스가 아직 연결되지 않았습니다. (화면 구성만 먼저 보시려면 주소 끝에 <code>?preview=1</code>을 붙이세요.)</p>
+      <!-- 아래는 구성 예시이며 사진은 모두 빈 자리입니다. 사례를 추가할 때 <article class="case"> 블록을 복사하세요. -->
+      <div class="cases">
+        <article class="case">
+          <div class="case__pair">
+            <figure><div class="media"><img src="images/case-01-before.jpg" alt="" loading="lazy"><span class="media__ph">시술 전 (3:4)<small>case-01-before.jpg</small></span></div><figcaption>시술 전</figcaption></figure>
+            <figure><div class="media"><img src="images/case-01-after.jpg" alt="" loading="lazy"><span class="media__ph">시술 후 (3:4)<small>case-01-after.jpg</small></span></div><figcaption>시술 후</figcaption></figure>
+          </div>
+          <dl>
+            <dt>분야</dt><dd class="todo">[입력 필요]</dd>
+            <dt>시술 내용</dt><dd class="todo">[입력 필요]</dd>
+            <dt>횟수·기간</dt><dd class="todo">[입력 필요]</dd>
+            <dt>주요 부작용</dt><dd class="todo">[입력 필요]</dd>
+          </dl>
+          <p class="case__warn">동일한 조건(각도·조명)에서 촬영한 사진만 게시하고, 환자 동의서를 보관해 주세요.</p>
+        </article>
+
+        <article class="case">
+          <div class="case__pair">
+            <figure><div class="media"><img src="images/case-02-before.jpg" alt="" loading="lazy"><span class="media__ph">시술 전 (3:4)<small>case-02-before.jpg</small></span></div><figcaption>시술 전</figcaption></figure>
+            <figure><div class="media"><img src="images/case-02-after.jpg" alt="" loading="lazy"><span class="media__ph">시술 후 (3:4)<small>case-02-after.jpg</small></span></div><figcaption>시술 후</figcaption></figure>
+          </div>
+          <dl>
+            <dt>분야</dt><dd class="todo">[입력 필요]</dd>
+            <dt>시술 내용</dt><dd class="todo">[입력 필요]</dd>
+            <dt>횟수·기간</dt><dd class="todo">[입력 필요]</dd>
+            <dt>주요 부작용</dt><dd class="todo">[입력 필요]</dd>
+          </dl>
+          <p class="case__warn">동일한 조건(각도·조명)에서 촬영한 사진만 게시하고, 환자 동의서를 보관해 주세요.</p>
+        </article>
       </div>
-
-      <!-- 공개 상태 (로그인 후): 아래는 구성 예시이며 사진은 모두 빈 자리입니다 -->
-      <div data-open hidden>
-        <p class="notice" style="margin-bottom:22px">사례의 사진과 경과는 환자분의 동의를 받아 게시하며, 개인에 따라 결과가 다를 수 있습니다. 시술 후 붓기·멍 등 이상 반응이 나타날 수 있습니다. <span class="todo">[고지 문구 최종 확인 필요]</span></p>
-
-        <div class="cases">
-          <article class="case">
-            <div class="case__pair">
-              <figure><div class="media"><img src="images/case-01-before.jpg" alt="" loading="lazy"><span class="media__ph">시술 전 (3:4)<small>case-01-before.jpg</small></span></div><figcaption>시술 전</figcaption></figure>
-              <figure><div class="media"><img src="images/case-01-after.jpg" alt="" loading="lazy"><span class="media__ph">시술 후 (3:4)<small>case-01-after.jpg</small></span></div><figcaption>시술 후</figcaption></figure>
-            </div>
-            <dl>
-              <dt>분야</dt><dd class="todo">[입력 필요]</dd>
-              <dt>시술 내용</dt><dd class="todo">[입력 필요]</dd>
-              <dt>횟수·기간</dt><dd class="todo">[입력 필요]</dd>
-              <dt>주요 부작용</dt><dd class="todo">[입력 필요]</dd>
-            </dl>
-            <p class="case__warn">동일한 조건(각도·조명)에서 촬영한 사진만 게시하고, 환자 동의서를 보관해 주세요.</p>
-          </article>
-
-          <article class="case">
-            <div class="case__pair">
-              <figure><div class="media"><img src="images/case-02-before.jpg" alt="" loading="lazy"><span class="media__ph">시술 전 (3:4)<small>case-02-before.jpg</small></span></div><figcaption>시술 전</figcaption></figure>
-              <figure><div class="media"><img src="images/case-02-after.jpg" alt="" loading="lazy"><span class="media__ph">시술 후 (3:4)<small>case-02-after.jpg</small></span></div><figcaption>시술 후</figcaption></figure>
-            </div>
-            <dl>
-              <dt>분야</dt><dd class="todo">[입력 필요]</dd>
-              <dt>시술 내용</dt><dd class="todo">[입력 필요]</dd>
-              <dt>횟수·기간</dt><dd class="todo">[입력 필요]</dd>
-              <dt>주요 부작용</dt><dd class="todo">[입력 필요]</dd>
-            </dl>
-            <p class="case__warn">동일한 조건(각도·조명)에서 촬영한 사진만 게시하고, 환자 동의서를 보관해 주세요.</p>
-          </article>
-        </div>
-      </div>
-
     </div>
   </section>
 </main>
