@@ -84,7 +84,24 @@ AI로 생성한 이미지는 **AI 생성물 표시**가 필요할 수 있습니�
 
 3. `git add`, `commit`, `push` 하면 배포 사이트에 반영됩니다. (Claude에게 "다운로드 폴더의 이 파일을 ○○ 자리에 넣어줘"라고 말씀하셔도 됩니다.)
 
-#### 자동 연동 (API)
+#### Nano Banana(Gemini) 이미지 생성 MCP 서버
+
+`tools/nanobanana-mcp/server.mjs`는 Gemini 이미지 모델로 사이트 이미지를 만들어 `images/`에 저장하는 MCP 서버입니다. 외부 패키지가 없고 Node.js 18 이상만 필요합니다. 저장소 루트의 `.mcp.json`에 등록되어 있어, 이 폴더를 Claude Code로 열면 사용할 수 있습니다.
+
+- **API 키:** `GEMINI_API_KEY` 환경변수(Windows 사용자 환경변수)에서 읽습니다. 저장소에 키를 넣지 마세요.
+- **결제:** 이미지 모델은 무료 한도가 0이라 Google AI Studio 프로젝트에 **결제 설정이 필요**합니다.
+- **생성 가능한 자리:** `treat-03-traffic`, `band-wide`, `intro-video-poster` 3곳만 코드로 허용됩니다. 원장 사진, 시설, 지도, 의료기기, 치료 사례는 실제 사진을 써야 하므로 생성이 막혀 있습니다.
+- **프롬프트 제한:** 사람, 의료진, 환자, 전후 사진 관련 표현이 있으면 거부됩니다.
+- **직접 실행:**
+
+```powershell
+node tools\nanobanana-mcp\server.mjs --list
+node tools\nanobanana-mcp\server.mjs --generate band-wide "Calm deep-blue sea with soft white foam lines, wide panoramic photograph"
+```
+
+생성된 이미지에는 Google의 SynthID 워터마크가 포함됩니다. 사이트 푸터 등에 AI 생성물 표시를 권장합니다.
+
+#### 자동 연동 (Magnific API)
 
 Magnific은 이미지·영상 생성 API를 제공하지만 **Business 이상 플랜**에서만 키가 발급됩니다. API 키는 사이트 코드나 저장소에 넣으면 안 되고, 본인 PC에서 도는 스크립트(`MAGNIFIC_API_KEY` 환경변수)로만 사용해야 합니다. 요금제 확인 후 필요하면 생성 스크립트를 추가할 수 있습니다.
 
