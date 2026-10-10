@@ -60,6 +60,9 @@ images/             사진·영상
 | `treat-07-skinbooster.jpg` | 스킨부스터 | engin akyurt |
 | `treat-08-craniosacral.jpg` | 두개천골약침 | Anna Blake |
 | `diagnosis-herbs.jpg` | 한의학적 진단 | Bundo Kim |
+| `treat-03-traffic.jpg` | 교통사고 진료 | Wes Hicks |
+| `band-wide.jpg` | 와이드 이미지 띠 | Emily Campbell |
+| `intro-video-poster.jpg` | 소개 영상 대표 이미지 | Linus Belanger |
 
 교체 방법: **같은 파일명**으로 `images/`에 덮어쓰면 됩니다.
 
@@ -111,12 +114,10 @@ Magnific은 이미지·영상 생성 API를 제공하지만 **Business 이상 �
 
 | 파일명 | 들어갈 곳 | 권장 비율 |
 |---|---|---|
-| `treat-03-traffic.jpg` | 교통사고 진료 | 4:3 |
 | `doctor-1.jpg` / `doctor-2.jpg` / `doctor-3.jpg` | 원장 프로필 | 3:4 |
 | `facility-01.jpg` ~ `facility-06.jpg` | 시설 갤러리 | 4:3 |
 | `device-main.jpg` | 의료기기 타일 | 4:3 |
-| `band-wide.jpg` | 와이드 이미지 띠 | 21:8 |
-| `intro-video.mp4` / `intro-video-poster.jpg` | 소개 영상 / 대표 이미지 | 16:9 |
+| `intro-video.mp4` | 소개 영상 (파일을 넣으면 대표 이미지 대신 재생됨) | 16:9 |
 | `map.jpg` | 오시는 길 지도 | 4:3 |
 
 ### 로고
