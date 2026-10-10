@@ -13,12 +13,30 @@
 
 <main id="main">
 
-  <!-- 1. 히어로: 큰 제목 + 가로 카드 슬라이드 (3대 주력 프로그램) -->
-  <section class="hero" style="padding-bottom:48px">
+  <!-- 1. 히어로: 큰 제목 + 와이드 파도 이미지 -->
+  <section class="hero" style="padding-bottom:40px">
+    <div class="wrap">
+      <p class="kicker">PADO KOREAN MEDICINE CLINIC</p>
+      <h1 class="h-xl hero__title">삶에 어떤 파도가 몰아쳐도,<br>함께라면 이겨낼 수 있도록</h1>
+      <p class="hero__sub">내면의 불편감, 외면의 아름다움까지 살피는 파도한의원입니다.</p>
+      <figure class="media hero__media" style="--r:16/9">
+        <img src="images/main-hero.jpg" alt="푸른 바다의 파도">
+        <figcaption class="media__ph">메인 대표 이미지 (16:9)<small>images/main-hero.jpg</small></figcaption>
+        <span class="hero__shade"></span>
+        <div class="hero__actions">
+          <a class="pill pill--lg pill--blue" data-link="naverBooking" href="#">네이버 예약하기</a>
+          <a class="pill pill--lg pill--line" href="tel:01080182459">전화 상담 010-8018-2459</a>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. 3대 주력 프로그램 (가로 카드 슬라이드) -->
+  <section class="section" style="padding-top:24px">
     <div class="wrap head-row">
       <div>
-        <p class="kicker">PADO KOREAN MEDICINE CLINIC</p>
-        <h1 class="h-xl hero__title">환자분들의 삶에 어떤 파도가 몰아쳐도,<br>함께라면 이겨낼 수 있도록</h1>
+        <p class="kicker">MAIN PROGRAMS</p>
+        <h2 class="h-lg">근본부터 살피는<br>3가지 주력 진료</h2>
       </div>
       <div class="rail-nav" data-rail-for="rail-hero">
         <button class="rail-btn" type="button" data-dir="-1" aria-label="이전">←</button>
@@ -31,7 +49,7 @@
         <span class="prog__shade"></span>
         <div class="prog__body">
           <p class="prog__no">MAIN 01</p>
-          <h2 class="prog__title">난치성 통증</h2>
+          <h3 class="prog__title">난치성 통증</h3>
           <p class="prog__desc">오래 이어지는 통증의 원인을 구조부터 살핍니다.</p>
           <div class="prog__chips"><span>비수술 통증치료</span><span>추나요법</span><span>교통사고</span><span>두개천골약침</span></div>
           <span class="prog__go">자세히 보기 →</span>
@@ -42,7 +60,7 @@
         <span class="prog__shade"></span>
         <div class="prog__body">
           <p class="prog__no">MAIN 02</p>
-          <h2 class="prog__title">갱년기 증후군</h2>
+          <h3 class="prog__title">갱년기 증후군</h3>
           <p class="prog__desc">불면·열감·만성피로, 몸의 변화를 함께 살핍니다.</p>
           <div class="prog__chips"><span>갱년기증후군</span><span>자율신경</span><span>초음파 검진</span></div>
           <span class="prog__go">자세히 보기 →</span>
@@ -53,26 +71,12 @@
         <span class="prog__shade"></span>
         <div class="prog__body">
           <p class="prog__no">MAIN 03</p>
-          <h2 class="prog__title">리프팅 · 다이어트</h2>
+          <h3 class="prog__title">리프팅 · 다이어트</h3>
           <p class="prog__desc">얼굴 라인과 체형의 균형을 함께 살핍니다.</p>
           <div class="prog__chips"><span>리프팅·안면비대칭</span><span>다이어트</span><span>스킨부스터</span></div>
           <span class="prog__go">자세히 보기 →</span>
         </div>
       </a>
-      <a class="prog" href="about.html">
-        <figure class="media"><img src="images/main-hero.jpg" alt="푸른 바다의 파도"><figcaption class="media__ph">대표 이미지<small>images/main-hero.jpg</small></figcaption></figure>
-        <span class="prog__shade"></span>
-        <div class="prog__body">
-          <p class="prog__no">ABOUT</p>
-          <h2 class="prog__title">파도한의원 이야기</h2>
-          <p class="prog__desc">내면의 불편감, 외면의 아름다움까지 살피는 공간입니다.</p>
-          <span class="prog__go">소개 보기 →</span>
-        </div>
-      </a>
-    </div>
-    <div class="wrap" style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
-      <a class="pill pill--lg pill--blue" data-link="naverBooking" href="#">네이버 예약하기</a>
-      <a class="pill pill--lg pill--line" href="tel:01080182459">전화 상담 010-8018-2459</a>
     </div>
   </section>
 

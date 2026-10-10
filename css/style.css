@@ -59,7 +59,7 @@ button { font: inherit; cursor: pointer; }
 .logo img { height: 34px; width: auto; }
 .nav { display: none; margin-left: 12px; }
 .nav > ul { display: flex; gap: 2px; }
-.nav a { display: block; padding: 10px 14px; border-radius: 12px; font-weight: 600; font-size: .95rem; }
+.nav a { display: block; padding: 10px 12px; border-radius: 12px; font-weight: 600; font-size: .95rem; white-space: nowrap; }
 .nav a:hover, .nav a[aria-current="page"] { background: var(--blue-pale); color: var(--blue-d); }
 .has-sub { position: relative; }
 .sub { position: absolute; left: 0; top: calc(100% + 6px); min-width: 220px; background: #fff; border-radius: 18px; box-shadow: 0 10px 34px rgba(0, 0, 0, .12); padding: 8px; display: none; }
@@ -81,9 +81,11 @@ button { font: inherit; cursor: pointer; }
 .nav.is-open a { padding: 13px 10px; font-size: 1.05rem; }
 .nav.is-open .sub { position: static; display: block; box-shadow: none; padding: 0 0 6px 14px; min-width: 0; }
 .nav.is-open .sub a { font-size: .95rem; color: var(--ink-2); padding: 9px 10px; }
-@media (min-width: 1040px) {
+@media (min-width: 1140px) {
   .nav { display: block; }
   .menu-btn { display: none; }
+}
+@media (min-width: 1360px) {
   .header__tel { display: inline; }
 }
 
