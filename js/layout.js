@@ -18,8 +18,8 @@
           '<li><a href="treatments.html#t8">두개천골약침</a></li></ul></li>' +
         '<li class="has-sub"><a href="menopause.html"' + cur(["menopause"]) + '>갱년기 증후군</a><ul class="sub">' +
           '<li><a href="treatments.html#t4">갱년기증후군</a></li>' +
-          '<li><a href="treatments.html#etc">자율신경 (불면·이명)</a></li>' +
-          '<li><a href="treatments.html#etc">초음파 검진</a></li></ul></li>' +
+          '<li><a href="treatments.html#t9">자율신경 (불면·이명)</a></li>' +
+          '<li><a href="treatments.html#t10">초음파 검진</a></li></ul></li>' +
         '<li class="has-sub"><a href="beauty.html"' + cur(["beauty"]) + '>리프팅 · 다이어트</a><ul class="sub">' +
           '<li><a href="treatments.html#t5">리프팅·안면비대칭</a></li>' +
           '<li><a href="treatments.html#t6">다이어트</a></li>' +
