@@ -40,7 +40,10 @@ images/             사진·영상 (아래 목록 참고)
 
 | 파일명 | 들어갈 곳 | 권장 비율 |
 |---|---|---|
-| `logo.png` | 로고 (투명 배경 PNG, 높이 40px 기준) | 가로형 |
+| `logo.png` | 헤더 로고 (심볼 + 파도한의원, 여백 없이 자른 가로형) — **적용됨** | 약 5.4:1 |
+| `logo-full.png` | 영문 병기(PADO KOREANMEDICINE CLINIC) 포함 로고 — 보관용 | 약 3.4:1 |
+| `logo-symbol.png` | 심볼만 있는 원형 로고 — 보관용 | 1:1 |
+| `favicon.png` | 브라우저 탭 아이콘 (64×64) — **적용됨** | 1:1 |
 | `main-hero.jpg` / `main-hero.mp4` | 메인 대표 이미지 / 영상 | 16:10 |
 | `about-concept.jpg` | 콘셉트 이미지 | 4:3 |
 | `intro-video.mp4` | 소개 영상 | 16:9 |
