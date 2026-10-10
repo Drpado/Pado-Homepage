@@ -4,33 +4,36 @@
   "use strict";
   var page = document.body.getAttribute("data-page") || "";
 
-  function cur(key) { return page === key ? ' aria-current="page"' : ""; }
-  var inTreat = page === "treatments";
+  function cur(keys) { return keys.indexOf(page) !== -1 ? ' aria-current="page"' : ""; }
 
   var header =
     '<a class="skip" href="#main">본문 바로가기</a>' +
     '<header class="header"><div class="header__in">' +
       '<a class="logo" href="index.html" aria-label="파도한의원 홈"><img src="images/logo.png" alt="파도한의원"></a>' +
       '<nav class="nav" id="gnav" aria-label="주 메뉴"><ul>' +
-        '<li class="has-sub"><a href="treatments.html#t1"' + (inTreat ? ' aria-current="page"' : '') + '>통증 치료</a><ul class="sub">' +
+        '<li class="has-sub"><a href="pain.html"' + cur(["pain"]) + '>난치성 통증</a><ul class="sub">' +
           '<li><a href="treatments.html#t1">비수술 통증치료</a></li>' +
           '<li><a href="treatments.html#t2">추나요법</a></li>' +
           '<li><a href="treatments.html#t3">교통사고 진료</a></li>' +
           '<li><a href="treatments.html#t8">두개천골약침</a></li></ul></li>' +
-        '<li class="has-sub"><a href="treatments.html#t4">갱년기·신경</a><ul class="sub">' +
+        '<li class="has-sub"><a href="menopause.html"' + cur(["menopause"]) + '>갱년기 증후군</a><ul class="sub">' +
           '<li><a href="treatments.html#t4">갱년기증후군</a></li>' +
           '<li><a href="treatments.html#etc">자율신경 (불면·이명)</a></li>' +
           '<li><a href="treatments.html#etc">초음파 검진</a></li></ul></li>' +
-        '<li class="has-sub"><a href="treatments.html#t5">리프팅·체형</a><ul class="sub">' +
+        '<li class="has-sub"><a href="beauty.html"' + cur(["beauty"]) + '>리프팅 · 다이어트</a><ul class="sub">' +
           '<li><a href="treatments.html#t5">리프팅·안면비대칭</a></li>' +
           '<li><a href="treatments.html#t6">다이어트</a></li>' +
           '<li><a href="treatments.html#t7">스킨부스터</a></li></ul></li>' +
-        '<li class="has-sub"><a href="about.html"' + (page === "about" || page === "doctors" || page === "facility" ? ' aria-current="page"' : '') + '>한의원 소개</a><ul class="sub">' +
+        '<li><a href="cases.html"' + cur(["cases"]) + '>치료 사례</a></li>' +
+        '<li class="has-sub"><a href="about.html"' + cur(["about", "doctors", "facility"]) + '>한의원 소개</a><ul class="sub">' +
           '<li><a href="about.html">콘셉트·차별점</a></li>' +
           '<li><a href="doctors.html">의료진</a></li>' +
           '<li><a href="facility.html">시설 둘러보기</a></li></ul></li>' +
-        '<li><a href="visit.html"' + cur("visit") + '>오시는 길</a></li>' +
-        '<li><a href="pricing.html"' + cur("pricing") + '>비급여 안내</a></li>' +
+        '<li class="has-sub"><a href="guide.html"' + cur(["guide", "visit", "reservation", "pricing"]) + '>처음 오시는 분</a><ul class="sub">' +
+          '<li><a href="guide.html">진료 과정 · FAQ</a></li>' +
+          '<li><a href="visit.html">진료시간 · 오시는 길</a></li>' +
+          '<li><a href="reservation.html">예약 · 상담</a></li>' +
+          '<li><a href="pricing.html">비급여 안내</a></li></ul></li>' +
       '</ul></nav>' +
       '<div class="header__cta">' +
         '<a class="header__tel" href="tel:01080182459">010-8018-2459</a>' +
@@ -53,10 +56,11 @@
           '<p>평일·야간 09:00 ~ 20:30<br>(점심 12:40 ~ 14:00)</p>' +
           '<p>주말·공휴일 09:00 ~ 14:30<br>(점심시간 없음)</p></div>' +
         '<div><h2>바로가기</h2><div class="footer__links">' +
+          '<a href="pain.html">난치성 통증</a><a href="menopause.html">갱년기 증후군</a>' +
+          '<a href="beauty.html">리프팅·다이어트</a><a href="cases.html">치료 사례</a>' +
           '<a href="about.html">한의원 소개</a><a href="doctors.html">의료진</a>' +
-          '<a href="treatments.html">진료 안내</a><a href="facility.html">시설</a>' +
-          '<a href="visit.html">오시는 길</a><a href="reservation.html">예약·상담</a>' +
-          '<a href="pricing.html">비급여 안내</a>' +
+          '<a href="guide.html">처음 오시는 분</a><a href="visit.html">오시는 길</a>' +
+          '<a href="reservation.html">예약·상담</a><a href="pricing.html">비급여 안내</a>' +
           '<a data-link="blog" href="#">블로그</a><a data-link="instagram" href="#">인스타그램</a>' +
         '</div></div>' +
       '</div>' +

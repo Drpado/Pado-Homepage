@@ -56,13 +56,37 @@ images/             사진·영상
 | `treat-01-pain.jpg` | 비수술 통증치료 | Katherine Hanlon |
 | `treat-02-chuna.jpg` | 추나요법 | Paige Madison |
 | `treat-04-menopause.jpg` | 갱년기증후군 | Daiga Ellaby |
-| `treat-05-lifting.jpg` | 리프팅·안면비대칭 | karelys Ruiz |
 | `treat-06-diet.jpg` | 다이어트 | Olesya Sukhomlin |
 | `treat-07-skinbooster.jpg` | 스킨부스터 | engin akyurt |
 | `treat-08-craniosacral.jpg` | 두개천골약침 | Anna Blake |
 | `diagnosis-herbs.jpg` | 한의학적 진단 | Bundo Kim |
 
 교체 방법: **같은 파일명**으로 `images/`에 덮어쓰면 됩니다.
+
+### Magnific으로 만든 이미지 (AI 생성)
+
+| 파일 | 용도 |
+|---|---|
+| `treat-05-lifting.jpg` | 리프팅·안면비대칭, 리프팅·다이어트 대표 이미지 |
+
+AI로 생성한 이미지는 **AI 생성물 표시**가 필요할 수 있습니다. 또한 실제 시술 결과인 것처럼 보이는 용도(치료 사례, 전후 사진)로는 쓰지 않아야 합니다.
+
+#### Magnific 이미지 넣는 법 (수동, 가장 간단)
+
+1. Magnific에서 이미지를 만들어 다운로드합니다.
+2. PowerShell에서 아래처럼 실행하면 크기를 줄이고 정해진 파일명으로 `images/`에 저장됩니다.
+
+```powershell
+.\tools\import-image.ps1 -Source "C:\Users\본인\Downloads\magnific_xxx.png" -Slot treat-05-lifting
+```
+
+`-Slot`에는 아래 "비어 있는 자리" 표의 파일명(확장자 제외)을 넣습니다. 예: `main-hero`, `treat-01-pain`, `doctor-1`, `facility-02`.
+
+3. `git add`, `commit`, `push` 하면 배포 사이트에 반영됩니다. (Claude에게 "다운로드 폴더의 이 파일을 ○○ 자리에 넣어줘"라고 말씀하셔도 됩니다.)
+
+#### 자동 연동 (API)
+
+Magnific은 이미지·영상 생성 API를 제공하지만 **Business 이상 플랜**에서만 키가 발급됩니다. API 키는 사이트 코드나 저장소에 넣으면 안 되고, 본인 PC에서 도는 스크립트(`MAGNIFIC_API_KEY` 환경변수)로만 사용해야 합니다. 요금제 확인 후 필요하면 생성 스크립트를 추가할 수 있습니다.
 
 ### 아직 비어 있는 자리 (회색 박스로 표시)
 
@@ -88,6 +112,26 @@ images/             사진·영상
 | `favicon.png` | 브라우저 탭 아이콘 |
 
 용량 권장: 사진은 한 장당 500KB~1MB 이하(가로 1600px 내외), 영상은 20MB 이하.
+
+## 3-1. 페이지 구성 (주력 3대 프로그램 중심)
+
+| 분류 | 페이지 | 세부 진료 |
+|---|---|---|
+| 주력 01 | `pain.html` 난치성 통증 | 비수술 통증치료, 추나요법, 교통사고 진료, 두개천골약침 |
+| 주력 02 | `menopause.html` 갱년기 증후군 | 갱년기증후군, 자율신경(불면·이명), 초음파 검진 |
+| 주력 03 | `beauty.html` 리프팅·다이어트 | 리프팅·안면비대칭, 다이어트, 스킨부스터 |
+| 회원 전용 | `cases.html` 치료 사례 | 로그인 후 공개 (아래 참고) |
+| 안내 | `guide.html` 처음 오시는 분 | 진료 과정 5단계, FAQ |
+| 상세 | `treatments.html` | 8개 진료 항목 상세 (각 페이지에서 링크) |
+
+메뉴는 `js/layout.js`, 랜딩의 카테고리 탭은 `index.html`의 `#categories`에서 수정합니다.
+
+## 3-2. 치료 사례(회원 전용) 페이지
+
+- 현재는 **화면 구성만** 되어 있고 로그인 기능은 연결되어 있지 않습니다. 사례 영역은 잠금 상태로 보이며, 주소 끝에 `?preview=1`을 붙이면 빈 자리 구성을 볼 수 있습니다.
+- GitHub Pages 같은 정적 호스팅은 파일을 로그인으로 막을 수 없습니다. **실제 환자 사진은 이 저장소(`images/`)에 절대 올리지 마세요.** 이 저장소는 공개 상태일 수 있고, 올린 파일은 주소만 알면 누구나 볼 수 있습니다.
+- 실제 운영은 인증이 걸린 저장소(예: Supabase Storage, Firebase Storage)에 사진을 두고, 로그인한 회원에게만 불러오도록 해야 합니다. 연결할 서비스가 정해지면 `js/config.js`의 `auth`를 채웁니다.
+- 환자 동의서, 개인정보(민감정보) 처리, 의료광고 심의 여부는 별도로 확인이 필요합니다.
 
 ## 4. 문구 수정
 

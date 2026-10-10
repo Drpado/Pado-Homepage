@@ -91,6 +91,39 @@
     });
   }
 
+  /* 6-2) 카테고리 탭 (랜딩) -------------------------------------------------- */
+  document.querySelectorAll("[data-tabs]").forEach(function (box) {
+    var tabs = box.querySelectorAll('[role="tab"]');
+    var panels = box.querySelectorAll('[role="tabpanel"]');
+    function show(id) {
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", String(t.getAttribute("aria-controls") === id)); });
+      panels.forEach(function (p) { p.hidden = p.id !== id; });
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function () { show(t.getAttribute("aria-controls")); });
+    });
+    var first = tabs[0];
+    if (first) { show(first.getAttribute("aria-controls")); }
+  });
+
+  /* 6-3) 치료 사례(회원 전용) 잠금 -------------------------------------------
+     주의: 이 스크립트는 화면 표시만 바꿉니다. 정적 사이트에서는 파일 자체를 숨길 수 없으므로
+     실제 사진은 로그인 서비스(인증이 걸린 저장소)에서만 불러와야 합니다. */
+  var gate = document.querySelector("[data-members-gate]");
+  if (gate) {
+    var auth = (SITE.auth || { provider: "none" });
+    var preview = /[?&]preview=1/.test(location.search);
+    var locked = gate.querySelector("[data-locked]");
+    var open = gate.querySelector("[data-open]");
+    var loggedIn = false; // 인증 서비스 연결 후 이 값을 실제 로그인 상태로 대체합니다.
+    if (loggedIn || preview) { if (locked) locked.hidden = true; if (open) open.hidden = false; }
+    var li = gate.querySelectorAll("[data-auth-link]");
+    li.forEach(function (a) {
+      var u = auth[a.getAttribute("data-auth-link")];
+      if (u) { a.setAttribute("href", u); } else { a.setAttribute("href", "#"); a.setAttribute("data-todo", "1"); }
+    });
+  }
+
   /* 7) 연도 ----------------------------------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
